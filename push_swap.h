@@ -31,8 +31,8 @@ typedef struct s_move {
     int total_cost;
 }               t_move;
 
-void    print_arr(int *arr, int size);
-void    ft_print_stack(t_stack *stack);
+// void    print_arr(int *arr, int size);
+// void    ft_print_stack(t_stack *stack);
 int     ft_strlen(char *str);
 int     is_space(char c);
 int     ft_split_needed(int ac, char *av[]);
@@ -87,6 +87,6 @@ void    check_before(t_stack *stack_a, t_stack *stack_b, int val);
 int     calc_rot_cost(int size, int index);
 int     find_val_insert_place(t_stack *stack_a, int val);
 int     solve_exp_case(t_stack *stack_a, int val);
-void    push_swap_back(t_stack *stack_a, t_stack *stack_b, t_unmarked *unmarked_nbs);
+void    push_swap_back(t_stack *stack_a, t_stack *stack_b);
 
 #endif

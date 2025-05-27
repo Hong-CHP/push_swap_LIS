@@ -103,7 +103,7 @@ void    push_swap(t_stack *stack_a, t_stack *stack_b)
     if (unmarked_nbs->unmarked_size == 0)
         return ;
     push_unmarked_nums_into_b(stack_a, stack_b, unmarked_nbs);
-    push_swap_back(stack_a, stack_b, unmarked_nbs);
+    push_swap_back(stack_a, stack_b);
     get_sort_arr(stack_a->size, arr_ord);
     min = arr_ord[0];
     rotate_min_to_top(stack_a, min);

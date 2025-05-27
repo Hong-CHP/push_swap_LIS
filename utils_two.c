@@ -1,29 +1,5 @@
 #include "push_swap.h"
 
-void    print_arr(int *arr, int size)
-{
-    int i = 0;
-    while (i < size)
-    {
-        printf("%d, ", arr[i]);
-        i++;
-    }
-    printf("\n");
-}
-
-void    ft_print_stack(t_stack *stack)
-{
-    t_node *cur;
-
-    cur = stack->top;
-    while (cur)
-    {
-        printf(" <- %d - > ", *(cur->value));
-        cur = cur->next;
-    }
-    printf("NULL\n");
-}
-
 int     get_real_pos(t_stack *stack_a, int num)
 {
     t_node *cur;
@@ -84,3 +60,26 @@ int ft_abs(int nb)
         return (-nb);
     return (nb);
 }
+// void    print_arr(int *arr, int size)
+// {
+//     int i = 0;
+//     while (i < size)
+//     {
+//         printf("%d, ", arr[i]);
+//         i++;
+//     }
+//     printf("\n");
+// }
+
+// void    ft_print_stack(t_stack *stack)
+// {
+//     t_node *cur;
+
+//     cur = stack->top;
+//     while (cur)
+//     {
+//         printf(" <- %d - > ", *(cur->value));
+//         cur = cur->next;
+//     }
+//     printf("NULL\n");
+// }

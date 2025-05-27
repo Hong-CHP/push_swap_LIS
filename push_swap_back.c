@@ -64,7 +64,7 @@ t_move  *get_insert_pos_in_a_idx_in_b(t_stack *stack_a, t_stack *stack_b, int va
     if ((a_cost >= 0 && b_cost >= 0) || (a_cost < 0 && b_cost < 0))
         cost = ft_max(ft_abs(a_cost), ft_abs(b_cost));
     else
-        cost = cost = abs(a_cost) + abs(b_cost);
+        cost = ft_abs(a_cost) + ft_abs(b_cost);
     // printf("cost is %d\n", cost);
     if (cost < best_move->total_cost)
     {
@@ -77,7 +77,7 @@ t_move  *get_insert_pos_in_a_idx_in_b(t_stack *stack_a, t_stack *stack_b, int va
 }
 
 //one malloc in func, free already
-void push_swap_back(t_stack *stack_a, t_stack *stack_b, t_unmarked *unmarked)
+void push_swap_back(t_stack *stack_a, t_stack *stack_b)
 {
     int val;
     t_node  *cur;

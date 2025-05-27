@@ -17,7 +17,7 @@ int    find_val_insert_place(t_stack *stack_a, int val)
     return (-1);
 }
 
-int    find_val_insert_place_exp_one(t_stack *stack_a, int val)
+int    find_val_insert_place_exp_one(t_stack *stack_a)
 {
     t_node *cur;
     int pos_in_a;
@@ -49,7 +49,6 @@ int    find_val_insert_place_exp_one(t_stack *stack_a, int val)
 int    find_val_insert_place_exp_two(t_stack *stack_a, int val)
 {
     t_node *cur;
-    int min;
 
     cur = stack_a->top;
     if (val < *(cur->value))
@@ -62,7 +61,7 @@ int    find_val_insert_place_exp_two(t_stack *stack_a, int val)
     return (0);
 }
 
-int    find_val_insert_place_exp_three(t_stack *stack_a, int val)
+int    find_val_insert_place_exp_three(t_stack *stack_a)
 {
     int pos;
     int pos_in_a;
@@ -109,9 +108,9 @@ int    solve_exp_case(t_stack *stack_a, int val)
         cur = cur->next;
     }
     if (val == max)
-        return (find_val_insert_place_exp_one(stack_a, val));
+        return (find_val_insert_place_exp_one(stack_a));
     else if (val == min)
-        return (find_val_insert_place_exp_three(stack_a, val));
+        return (find_val_insert_place_exp_three(stack_a));
     else
         return (find_val_insert_place_exp_two(stack_a, val));
 }
