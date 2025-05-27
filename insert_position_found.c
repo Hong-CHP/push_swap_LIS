@@ -84,10 +84,8 @@ int    find_val_insert_place_exp_three(t_stack *stack_a)
     }
     if (pos_in_a == 0)
         return (0);
-    else if (pos_in_a == stack_a->size - 1)
-        return (0);
     else
-        return (pos_in_a + 1); 
+        return (pos_in_a); 
 }
 
 int    solve_exp_case(t_stack *stack_a, int val)

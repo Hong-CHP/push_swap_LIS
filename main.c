@@ -82,17 +82,19 @@ int main(int argc, char *argv[])
 	int i;
 
 	if (argc <= 1)
-	{
-		write(1, "Error\n", 6);
-		exit(1);
-	}
+		return (0);
 	i = 1;
 	while (i < argc)
 	{
+		if (argv[i][0] == '\0')
+		{
+			write(2, "Error\n", 6);
+			return (1);
+		}
 		if (!is_validate_param(argv[i]))
 		{
-			write(1, "Error\n", 6);
-			exit(1);
+			write(2, "Error\n", 6);
+			return (1);
 		}
 		i++;
 	}

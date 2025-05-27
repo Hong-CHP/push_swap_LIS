@@ -89,11 +89,8 @@ void    rotate_min_to_top(t_stack *stack_a, int min)
 void    push_swap(t_stack *stack_a, t_stack *stack_b)
 {
     int *flags;
-    //(malloc in get_longest_increasing_nums, need to be free at last of program)
     int *arr_ord;
-    //(malloc in stack_mapping_arr_ord, need to be free)
     t_unmarked *unmarked_nbs;
-    //(malloc in func, need to be free)
     int min;
 
     arr_ord = stack_mapping_arr_ord(stack_a);

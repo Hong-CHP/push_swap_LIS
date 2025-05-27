@@ -50,9 +50,19 @@ int is_dup_value(t_stack *stack, int *value)
     return (0);
 }
 
+void    simple_complexe_push_swap(t_stack *stack_a, t_stack *stack_b)
+{
+    if(!check_if_unsort(stack_a) || stack_a->size == 0)
+        return ;
+    if (stack_a->size <= 6)
+        easy_push_swap(stack_a, stack_b);
+    else
+        push_swap(stack_a, stack_b);
+}
+
 void	get_value_init_stack(int argc, char *argv[])
 {
-    int *value;
+    long long *value;
     int i;
     t_stack stack_a = {NULL, 0};
     t_stack stack_b = {NULL, 0};
@@ -64,18 +74,16 @@ void	get_value_init_stack(int argc, char *argv[])
         if (!value)
             return ;
         *value = ft_atoi(argv[i]);
-        if (is_dup_value(&stack_a, value))
+        if (is_dup_value(&stack_a, (int *)value)
+            || *value < -2147483648 || *value > 2147483647)
         {
-            write(1, "Error\n", 6);
-            exit(1);
+            write(2, "Error\n", 6);
+            return ;
         }
-        ft_push(&stack_a, value);
+        ft_push(&stack_a, (int *)value);
         i++;
     }
-    if (stack_a.size <= 6)
-        easy_push_swap(&stack_a, &stack_b);
-    else
-        push_swap(&stack_a, &stack_b);
+    simple_complexe_push_swap(&stack_a, &stack_b);
     ft_free_stack(&stack_a);
     ft_free_stack(&stack_b);
 }

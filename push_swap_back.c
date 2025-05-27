@@ -65,7 +65,6 @@ t_move  *get_insert_pos_in_a_idx_in_b(t_stack *stack_a, t_stack *stack_b, int va
         cost = ft_max(ft_abs(a_cost), ft_abs(b_cost));
     else
         cost = ft_abs(a_cost) + ft_abs(b_cost);
-    // printf("cost is %d\n", cost);
     if (cost < best_move->total_cost)
     {
         best_move->val = val;
@@ -85,8 +84,6 @@ void push_swap_back(t_stack *stack_a, t_stack *stack_b)
 
     while (stack_b->size > 0)
     {
-        // ft_print_stack(stack_a);
-        // ft_print_stack(stack_b);
         best_move = malloc(sizeof(t_move));
         if (!best_move)
             return ;
@@ -98,7 +95,6 @@ void push_swap_back(t_stack *stack_a, t_stack *stack_b)
             get_insert_pos_in_a_idx_in_b(stack_a, stack_b, val, best_move);
             cur = cur->next;
         }
-        // printf("best move total cost is %d\n", best_move->total_cost);
         rotate_both(stack_a, stack_b, *best_move);
         pa(stack_b, stack_a);
         free(best_move);

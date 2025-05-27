@@ -1,5 +1,19 @@
 #include "push_swap.h"
 
+int check_if_unsort(t_stack *stack_a)
+{
+    t_node *cur;
+
+    cur = stack_a->top;
+    while (cur->next)
+    {
+        if (*(cur->value) > *(cur->next->value))
+            return(1);
+        cur = cur->next;
+    }
+    return (0);
+}
+
 int *creat_array_from_stack(t_stack *stack_a, int *arr)
 {
     t_node *cur;
@@ -18,7 +32,6 @@ int *creat_array_from_stack(t_stack *stack_a, int *arr)
 int    *stack_mapping_arr_ord(t_stack *stack_a)
 {
     int *arr;
-    // (need to be free at the last of program)
 
     arr = malloc(sizeof(int) * stack_a->size);
     if (!arr)
@@ -30,9 +43,7 @@ int    *stack_mapping_arr_ord(t_stack *stack_a)
 int    *stack_mapping_arr_flags(t_stack *stack_a)
 {
     int *arr;
-    // (need to be free ar the last of func if arr_asc created and freed)
     int *flags;
-    //(malloc in get_longest_increasing_nums, need to be free at last of program)
     
     arr = malloc(sizeof(int) * stack_a->size);
     if (!arr)
