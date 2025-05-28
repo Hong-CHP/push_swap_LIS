@@ -1,64 +1,78 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_two.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hporta-c <hporta-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/28 13:01:07 by hporta-c          #+#    #+#             */
+/*   Updated: 2025/05/28 14:03:08 by hporta-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int     get_real_pos(t_stack *stack_a, int num)
+int	get_real_pos(t_stack *stack_a, int num)
 {
-    t_node *cur;
-    int pos;
+	t_node	*cur;
+	int		pos;
 
-    pos= 1;
-    cur = stack_a->top;
-    while (cur)
-    {
-        if (num == *(cur->value))
-            break;
-        pos++;
-        cur = cur->next;
-    }
-    return (pos);
+	pos = 1;
+	cur = stack_a->top;
+	while (cur)
+	{
+		if (num == *(cur->value))
+			break ;
+		pos++;
+		cur = cur->next;
+	}
+	return (pos);
 }
 
-int is_obj_unmarked(t_unmarked *unmarked_nbs, int val)
+int	is_obj_unmarked(t_unmarked *unmarked_nbs, int val)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (i < unmarked_nbs->unmarked_size)
-    {
-        if (val == unmarked_nbs->unmarked_nums[i])
-            return (1);
-        i++;
-    }
-    return (0);
+	i = 0;
+	while (i < unmarked_nbs->unmarked_size)
+	{
+		if (val == unmarked_nbs->unmarked_nums[i])
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
-int get_index(t_stack *stack, int val)
+int	get_index(t_stack *stack, int val)
 {
-    t_node *cur = stack->top;
-    int index = 0;
+	t_node	*cur;
+	int		index;
 
-    while (cur)
-    {
-        if (*(cur->value) == val)
-            return index;
-        cur = cur->next;
-        index++;
-    }
-    return -1;
+	cur = stack->top;
+	index = 0;
+	while (cur)
+	{
+		if (*(cur->value) == val)
+			return (index);
+		cur = cur->next;
+		index++;
+	}
+	return (-1);
 }
 
-int ft_max(int a, int b)
+int	ft_max(int a, int b)
 {
-    if (a > b)
-        return (a);
-    else
-        return (b);
+	if (a > b)
+		return (a);
+	else
+		return (b);
 }
 
-int ft_abs(int nb)
+int	ft_abs(int nb)
 {
-    if (nb < 0)
-        return (-nb);
-    return (nb);
+	if (nb < 0)
+		return (-nb);
+	return (nb);
 }
 // void    print_arr(int *arr, int size)
 // {

@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_in_stacks.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hporta-c <hporta-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/28 12:02:27 by hporta-c          #+#    #+#             */
+/*   Updated: 2025/05/28 14:31:44 by hporta-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	swap_top_two(t_stack *stack)
 {
-	t_node *first;
-	t_node *second;
-	
+	t_node	*first;
+	t_node	*second;
+
 	if (!stack || !stack->top || !stack->top->next)
 		return ;
 	first = stack->top;
@@ -20,7 +32,7 @@ void	swap_top_two(t_stack *stack)
 
 void	push_to_top(t_stack *stack_a, t_stack *stack_b)
 {
-	t_node *first;
+	t_node	*first;
 
 	if (!stack_a || !stack_a->top || !stack_a->top->value)
 		return ;
@@ -55,9 +67,9 @@ void	rotate_to_top(t_stack *stack)
 	first->next = NULL;
 }
 
-void    reverse_rotate(t_stack *stack)
+void	reverse_rotate(t_stack *stack)
 {
-	t_node *bottom;
+	t_node	*bottom;
 
 	if (stack->size < 2)
 		return ;

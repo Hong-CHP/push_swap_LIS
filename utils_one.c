@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_one.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hporta-c <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/28 12:59:48 by hporta-c          #+#    #+#             */
+/*   Updated: 2025/05/28 12:59:50 by hporta-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_strlen(char *str)
@@ -5,7 +17,7 @@ int	ft_strlen(char *str)
 	int	len;
 
 	len = 0;
-	while(str[len])
+	while (str[len])
 		len++;
 	return (len);
 }
@@ -23,7 +35,7 @@ int	is_validate_param(char *str)
 		return (0);
 	while (str[i])
 	{
-		if(!(str[i] >= '0' && str[i] <= '9'))
+		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (0);
 		i++;
 	}
@@ -39,7 +51,7 @@ char	*ft_strdup(char *src)
 	if (!src)
 		return (NULL);
 	len = ft_strlen(src);
-	dest = (char *)malloc((len + 1) *sizeof(char));
+	dest = (char *)malloc((len + 1) * sizeof(char));
 	if (!dest)
 		return (NULL);
 	i = 0;
@@ -64,9 +76,9 @@ int	*ft_bzero(int *s, size_t n)
 
 long long	ft_atoi(char *str)
 {
-	long long nb;
-	int	i;
-	int flag;
+	long long	nb;
+	int			i;
+	int			flag;
 
 	i = 0;
 	nb = 0;

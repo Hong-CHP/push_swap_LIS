@@ -1,114 +1,126 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   insert_position_found.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hporta-c <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/28 11:32:37 by hporta-c          #+#    #+#             */
+/*   Updated: 2025/05/28 11:43:42 by hporta-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int    find_val_insert_place(t_stack *stack_a, int val)
+int	find_val_insert_place(t_stack *stack_a, int val)
 {
-    t_node *cur;
-    int pos_in_a;
+	t_node	*cur;
+	int		pos_in_a;
 
-    pos_in_a = 0;
-    cur = stack_a->top;
-    while (cur->next)
-    {
-        if (val > *(cur->value) && val < *(cur->next->value))
-            return (pos_in_a + 1);
-        pos_in_a++;
-        cur = cur->next;
-    }
-    return (-1);
+	pos_in_a = 0;
+	cur = stack_a->top;
+	while (cur->next)
+	{
+		if (val > *(cur->value) && val < *(cur->next->value))
+			return (pos_in_a + 1);
+		pos_in_a++;
+		cur = cur->next;
+	}
+	return (-1);
 }
 
-int    find_val_insert_place_exp_one(t_stack *stack_a)
+int	find_val_insert_place_exp_one(t_stack *stack_a)
 {
-    t_node *cur;
-    int pos_in_a;
-    int max;
-    int pos;
+	t_node	*cur;
+	int		pos_in_a;
+	int		max;
+	int		pos;
 
-    max = *(stack_a->top->value);
-    cur = stack_a->top;
-    pos_in_a = 0;
-    pos = 0;
-    while (cur)
-    {
-        if (max < *(cur->value))
-        {
-            max = *(cur->value);
-            pos_in_a = pos;
-        }
-        pos++;
-        cur = cur->next;
-    }
-    if (pos_in_a == 0)
-        return (0);
-    else if (pos_in_a == stack_a->size - 1)
-        return (0);
-    else
-        return (pos_in_a + 1);
+	max = *(stack_a->top->value);
+	cur = stack_a->top;
+	pos_in_a = 0;
+	pos = 0;
+	while (cur)
+	{
+		if (max < *(cur->value))
+		{
+			max = *(cur->value);
+			pos_in_a = pos;
+		}
+		pos++;
+		cur = cur->next;
+	}
+	if (pos_in_a == 0)
+		return (0);
+	else if (pos_in_a == stack_a->size - 1)
+		return (0);
+	else
+		return (pos_in_a + 1);
 }
 
-int    find_val_insert_place_exp_two(t_stack *stack_a, int val)
+int	find_val_insert_place_exp_two(t_stack *stack_a, int val)
 {
-    t_node *cur;
+	t_node	*cur;
 
-    cur = stack_a->top;
-    if (val < *(cur->value))
-    {
-        while (cur->next)
-            cur = cur->next;
-        if (val > *(cur->value))
-            return (0);
-    }
-    return (0);
+	cur = stack_a->top;
+	if (val < *(cur->value))
+	{
+		while (cur->next)
+			cur = cur->next;
+		if (val > *(cur->value))
+			return (0);
+	}
+	return (0);
 }
 
-int    find_val_insert_place_exp_three(t_stack *stack_a)
+int	find_val_insert_place_exp_three(t_stack *stack_a)
 {
-    int pos;
-    int pos_in_a;
-    t_node *cur;
-    int min;
+	int		pos;
+	int		pos_in_a;
+	t_node	*cur;
+	int		min;
 
-    cur = stack_a->top;
-    min = *(cur->value);
-    pos_in_a = 0;
-    pos = 0;
-    while (cur)
-    {
-        if (min > *(cur->value))
-        {
-            min = *(cur->value);
-            pos_in_a = pos;
-        }
-        pos++;
-        cur = cur->next;
-    }
-    if (pos_in_a == 0)
-        return (0);
-    else
-        return (pos_in_a); 
+	cur = stack_a->top;
+	min = *(cur->value);
+	pos_in_a = 0;
+	pos = 0;
+	while (cur)
+	{
+		if (min > *(cur->value))
+		{
+			min = *(cur->value);
+			pos_in_a = pos;
+		}
+		pos++;
+		cur = cur->next;
+	}
+	if (pos_in_a == 0)
+		return (0);
+	else
+		return (pos_in_a);
 }
 
-int    solve_exp_case(t_stack *stack_a, int val)
+int	solve_exp_case(t_stack *stack_a, int val)
 {
-    t_node *cur;
-    int max;
-    int min;
+	t_node	*cur;
+	int		max;
+	int		min;
 
-    max = val;
-    min = val;
-    cur = stack_a->top;
-    while (cur)
-    {
-        if (max < *(cur->value))
-            max = *(cur->value);
-        if (min > *(cur->value))
-            min = *(cur->value);
-        cur = cur->next;
-    }
-    if (val == max)
-        return (find_val_insert_place_exp_one(stack_a));
-    else if (val == min)
-        return (find_val_insert_place_exp_three(stack_a));
-    else
-        return (find_val_insert_place_exp_two(stack_a, val));
+	max = val;
+	min = val;
+	cur = stack_a->top;
+	while (cur)
+	{
+		if (max < *(cur->value))
+			max = *(cur->value);
+		if (min > *(cur->value))
+			min = *(cur->value);
+		cur = cur->next;
+	}
+	if (val == max)
+		return (find_val_insert_place_exp_one(stack_a));
+	else if (val == min)
+		return (find_val_insert_place_exp_three(stack_a));
+	else
+		return (find_val_insert_place_exp_two(stack_a, val));
 }
