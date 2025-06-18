@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hporta-c <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: hporta-c <hporta-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/28 12:01:54 by hporta-c          #+#    #+#              #
-#    Updated: 2025/05/28 12:02:03 by hporta-c         ###   ########.fr        #
+#    Updated: 2025/06/18 16:21:29 by hporta-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 SRCS = main.c split_params.c split_prepare.c array_created_from_stack.c \
 		stack_created.c simple_push_swap.c simple_push_swap_more.c utils_one.c \
 		utils_two.c longest_increasing.c push_swap_prepare.c move_in_stacks.c \

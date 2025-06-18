@@ -6,7 +6,7 @@
 /*   By: hporta-c <hporta-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 12:54:17 by hporta-c          #+#    #+#             */
-/*   Updated: 2025/06/18 11:17:44 by hporta-c         ###   ########.fr       */
+/*   Updated: 2025/06/18 17:20:03 by hporta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,20 +79,17 @@ void	get_value_init_stack(int argc, char *argv[], int i)
 	t_stack		stack_a;
 	t_stack		stack_b;
 
+	value = NULL;
 	stack_a = (t_stack){NULL, 0};
 	stack_b = (t_stack){NULL, 0};
 	while (i < argc)
 	{
-		value = malloc(sizeof(int));
+		value = malloc(sizeof(long));
 		if (!value)
 			return ;
 		*value = ft_atoi(argv[i]);
-		if (is_dup_value(&stack_a, (int *)value)
-			|| *value < -2147483648 || *value > 2147483647)
-		{
-			write(2, "Error\n", 6);
+		if (!check_value_before_push(value, &stack_a))
 			return ;
-		}
 		ft_push(&stack_a, (int *)value);
 		i++;
 	}

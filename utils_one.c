@@ -6,7 +6,7 @@
 /*   By: hporta-c <hporta-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 12:59:48 by hporta-c          #+#    #+#             */
-/*   Updated: 2025/06/18 11:17:20 by hporta-c         ###   ########.fr       */
+/*   Updated: 2025/06/18 16:08:52 by hporta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ int	is_validate_param(char *str)
 	int	i;
 
 	i = 0;
-	if (is_space(str[i]))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	if (!str[i])
-		return (0);
 	while (str[i])
 	{
+		if (!str[i])
+			return (0);
+		if (is_space(str[i]))
+			i++;
+		if (str[i] == '+' || str[i] == '-')
+			i++;
 		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (0);
 		i++;

@@ -6,7 +6,7 @@
 /*   By: hporta-c <hporta-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 12:11:23 by hporta-c          #+#    #+#             */
-/*   Updated: 2025/06/18 11:16:54 by hporta-c         ###   ########.fr       */
+/*   Updated: 2025/06/18 17:22:40 by hporta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_move
 }		t_move;
 
 // void    print_arr(int *arr, int size);
-//void    ft_print_stack(t_stack *stack);
+// void    ft_print_stack(t_stack *stack);
 int		ft_strlen(char *str);
 int		is_space(char c);
 int		ft_split_needed(int ac, char *av[]);
@@ -60,6 +60,9 @@ int		is_validate_param(char *str);
 int		*ft_bzero(int *s, size_t n);
 long	ft_atoi(char *str);
 void	get_value_init_stack(int argc, char *argv[], int i);
+int		check_value_before_push(long *value, t_stack *stack_a);
+int		is_dup_value(t_stack *stack, int *value);
+void	ft_free_stack(t_stack *stack);
 int		check_if_unsort(t_stack *stack_a);
 void	swap_top_two(t_stack *stack);
 void	push_to_top(t_stack *stack_a, t_stack *stack_b);

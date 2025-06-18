@@ -6,7 +6,7 @@
 /*   By: hporta-c <hporta-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 12:02:27 by hporta-c          #+#    #+#             */
-/*   Updated: 2025/05/28 14:31:44 by hporta-c         ###   ########.fr       */
+/*   Updated: 2025/06/18 17:20:16 by hporta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,18 @@ void	reverse_rotate(t_stack *stack)
 	bottom->prev = NULL;
 	stack->top->prev = bottom;
 	stack->top = bottom;
+}
+
+int	check_value_before_push(long *value, t_stack *stack_a)
+{
+	if (is_dup_value(stack_a, (int *)value)
+		|| (*value < -2147483648 || *value > 2147483647))
+	{
+		free(value);
+		if (stack_a->size > 0)
+			ft_free_stack(stack_a);
+		write(2, "Error\n", 6);
+		return (0);
+	}
+	return (1);
 }
