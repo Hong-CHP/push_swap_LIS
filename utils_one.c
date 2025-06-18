@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_one.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hporta-c <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hporta-c <hporta-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 12:59:48 by hporta-c          #+#    #+#             */
-/*   Updated: 2025/05/28 12:59:50 by hporta-c         ###   ########.fr       */
+/*   Updated: 2025/06/18 11:17:20 by hporta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ int	*ft_bzero(int *s, size_t n)
 	return (s);
 }
 
-long long	ft_atoi(char *str)
+long	ft_atoi(char *str)
 {
-	long long	nb;
+	long		nb;
 	int			i;
 	int			flag;
 

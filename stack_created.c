@@ -6,7 +6,7 @@
 /*   By: hporta-c <hporta-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 12:54:17 by hporta-c          #+#    #+#             */
-/*   Updated: 2025/05/28 14:37:28 by hporta-c         ###   ########.fr       */
+/*   Updated: 2025/06/18 11:17:44 by hporta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	simple_complexe_push_swap(t_stack *stack_a, t_stack *stack_b)
 // ft_print_stack(&stack_a);
 void	get_value_init_stack(int argc, char *argv[], int i)
 {
-	long long	*value;
+	long		*value;
 	t_stack		stack_a;
 	t_stack		stack_b;
 

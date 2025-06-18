@@ -6,7 +6,7 @@
 /*   By: hporta-c <hporta-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 12:11:23 by hporta-c          #+#    #+#             */
-/*   Updated: 2025/05/28 14:37:54 by hporta-c         ###   ########.fr       */
+/*   Updated: 2025/06/18 11:16:54 by hporta-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	**ft_split(char **res, char *str);
 char	**allocate_and_split(char *str);
 int		is_validate_param(char *str);
 int		*ft_bzero(int *s, size_t n);
-long long	ft_atoi(char *str);
+long	ft_atoi(char *str);
 void	get_value_init_stack(int argc, char *argv[], int i);
 int		check_if_unsort(t_stack *stack_a);
 void	swap_top_two(t_stack *stack);
